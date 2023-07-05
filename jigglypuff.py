@@ -6,7 +6,6 @@ import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QLabel, QLineEdit, QPushButton
 from PyQt5.QtGui import QIcon, QFont
-from PyQt5.QtCore import Qt
 
 class Music:
     def __init__(self, name, link):
@@ -73,9 +72,7 @@ class Jigglypuff(QWidget):
             credentials = json.load(file)
 
         client_id = credentials["client_id"]
-        print(client_id)
         client_secret = credentials["client_secret"]
-        print(client_secret)
 
         client_credentials_manager = SpotifyClientCredentials(client_id=client_id, client_secret=client_secret)
         sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
